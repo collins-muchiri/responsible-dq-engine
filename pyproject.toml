@@ -1,0 +1,63 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "rdqe"
+version = "0.1.0"
+description = "Responsible Data Quality Engine: audit ODK/KoboToolbox survey exports and form definitions for data quality failures and Kenya DPA 2019 / GDPR privacy risks, with costed remediation."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [
+    { name = "Muchiri Collins Kamama", email = "kamamamuchiri@yahoo.com" },
+]
+keywords = [
+    "data-quality",
+    "MEAL",
+    "ODK",
+    "KoboToolbox",
+    "privacy",
+    "kenya-dpa-2019",
+    "GDPR",
+    "humanitarian-data",
+    "XLSForm",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Security",
+]
+dependencies = [
+    "openpyxl>=3.1",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "bandit>=1.7",
+    "pip-audit>=2.6",
+]
+
+[project.scripts]
+rdqe = "rdqe.cli:entry"
+
+[project.urls]
+Homepage = "https://github.com/collins-muchiri/responsible-dq-engine"
+Repository = "https://github.com/collins-muchiri/responsible-dq-engine"
+Issues = "https://github.com/collins-muchiri/responsible-dq-engine/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

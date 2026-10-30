@@ -1,0 +1,11 @@
+# Bandit configuration for rdqe.
+# CI runs: bandit -c .bandit -r src
+# Test scaffolding and generated examples are excluded from the scan.
+# B101 (assert_used) is skipped: assertions are legitimate in the test suite
+# and rdqe source contains none anyway.
+exclude_dirs:
+  - tests
+  - examples
+  - docs
+skips:
+  - B101

@@ -1,0 +1,18 @@
+rules:
+  - id: rdqe-no-eval
+    message: eval() is forbidden in rdqe source; scanned values are untrusted input.
+    languages: [python]
+    severity: ERROR
+    pattern: eval(...)
+
+  - id: rdqe-no-exec
+    message: exec() is forbidden in rdqe source; scanned values are untrusted input.
+    languages: [python]
+    severity: ERROR
+    pattern: exec(...)
+
+  - id: rdqe-no-shell-true
+    message: subprocess calls with shell=True are forbidden in rdqe source.
+    languages: [python]
+    severity: ERROR
+    pattern: subprocess.$FUNC(..., shell=True, ...)

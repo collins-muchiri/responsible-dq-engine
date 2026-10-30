@@ -1,0 +1,33 @@
+{
+  "primary_key": "record_id",
+  "required_fields": [
+    "record_id",
+    "visit_start_date",
+    "consent",
+    "sex",
+    "age"
+  ],
+  "ranges": {
+    "age": {
+      "min": 0,
+      "max": 120
+    }
+  },
+  "skip_rules": [
+    {
+      "if": {
+        "column": "currently_pregnant",
+        "equals": "Yes"
+      },
+      "then_required": [
+        "anc_facility"
+      ]
+    }
+  ],
+  "disagg": {
+    "sex": [
+      "Male",
+      "Female"
+    ]
+  }
+}

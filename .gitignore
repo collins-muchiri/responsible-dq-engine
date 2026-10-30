@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+
+# Test and coverage artefacts
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Local outputs
+reports/
+.env
+*.log
+
+# Editors and OS noise
+.vscode/
+.idea/
+.DS_Store
