@@ -1,4 +1,4 @@
-# rdqe v0.1.0 - Engineering Specification
+# rdqe v0.1.0: Engineering Specification
 
 This document records the specification that release 0.1.0 implements. It is
 the contract between the rule registry, the scanners, the reports, the CLI
@@ -77,7 +77,7 @@ Audiences:
 - Kenya phone: `(?<!\d)(?:\+254|254|0)(?:7|1)\d{8}(?!\d)`, strict, matches
   in any value including free text.
 - Email: strict pattern, any value.
-- National ID `\d{7,8}`: CONTEXT-MATCHED only - the column name must carry
+- National ID `\d{7,8}`: CONTEXT-MATCHED only: the column name must carry
   identifier context (`id`, `huduma`, `kitambulisho`, `national_id`) or the
   value itself must contain such a keyword. A bare 7-digit number with no
   context must not match (regression-tested; whole-token matching keeps
@@ -86,10 +86,10 @@ Audiences:
   `{hiv, aids, art, arv, vl, tb, tuberculosis, gbv, violence, survivor,
   rape, defilement, diagnosis, mental}` plus substrings
   `{viral, health_status, disability_type}`. `visit_start_date` must not be
-  flagged (token `start`, not `art`) - regression-tested.
+  flagged (token `start`, not `art`): regression-tested.
 - Free-text sensitive terms: word-boundary, case-insensitive
   `\b(hiv|aids|art|arv|viral load|tb|tuberculosis|gbv|rape|defilement|survivor)\b`.
-  `Programme start date` must not match `art` - regression-tested.
+  `Programme start date` must not match `art`: regression-tested.
 - Helpers: `is_name_column`, `is_location_column`, `is_sex_column`,
   `is_age_column`, `is_disability_column`, `is_consent_column`,
   `is_phone_column`, `is_national_id_column`, `decimal_places`,

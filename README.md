@@ -1,4 +1,4 @@
-# rdqe - Responsible Data Quality Engine
+# rdqe: Responsible Data Quality Engine
 
 [![CI](https://github.com/collins-muchiri/responsible-dq-engine/actions/workflows/ci.yml/badge.svg)](https://github.com/collins-muchiri/responsible-dq-engine/actions/workflows/ci.yml)
 [![Licence: MIT](https://img.shields.io/badge/licence-MIT-green.svg)](https://github.com/collins-muchiri/responsible-dq-engine/blob/main/LICENSE)
@@ -30,7 +30,7 @@ data is not fit to report.
 
 MEAL (monitoring, evaluation, accountability and learning) teams inherit
 survey exports that are duplicated, half-filled, mis-skipped and full of
-identifiers typed into notes fields - and donor-funded programmes carry legal
+identifiers typed into notes fields, and donor-funded programmes carry legal
 duties under the Kenya Data Protection Act (2019) and, for many partners,
 GDPR. rdqe turns the manual audit into a repeatable, exit-coded check:
 run it after every export, attach the HTML report to the data-handling file,
@@ -59,7 +59,7 @@ the CI gate working as designed; add `--fail-on none` to force exit `0`.
 
 ## Rules
 
-### Data rules (R01-R14) - `rdqe scan-data`
+### Data rules (R01-R14): `rdqe scan-data`
 
 | ID | Rule | Severity | Kenya DPA 2019 | GDPR |
 | --- | --- | --- | --- | --- |
@@ -78,7 +78,7 @@ the CI gate working as designed; add `--fail-on none` to force exit `0`.
 | R13 | Identifier format anomalies (6-digit IDs, 9-digit phones) | low | accuracy principle | Art. 5(1)(d) |
 | R14 | Category inconsistency (case/spacing variants of the same value) | low | accuracy principle | Art. 5(1)(d) |
 
-### Form rules (F01-F05) - `rdqe scan-form`
+### Form rules (F01-F05): `rdqe scan-form`
 
 | ID | Rule | Severity | Kenya DPA 2019 | GDPR |
 | --- | --- | --- | --- | --- |
@@ -194,11 +194,11 @@ Exit `1` fails the job when findings meet the threshold.
   dynamic string in the HTML report passes through `html.escape`; PII
   evidence is masked (`07******78`); sensitive free-text disclosures are
   reported as matched terms only. An `<script>` payload in a data value
-  renders escaped in the report - tested.
+  renders escaped in the report: tested.
 - **No network, no telemetry**: zero runtime network calls by design; the
   only runtime dependency is `openpyxl`.
 - **Principle of least data**: the tool reports counts, masked evidence and
-  row numbers - never raw personal values.
+  row numbers: never raw personal values.
 
 ## Project layout
 
@@ -240,7 +240,7 @@ rdqe demo --out examples --fail-on none   # >= 20 findings across severities
 
 rdqe was built by **Muchiri Collins Kamama**, a MEAL practitioner and data
 systems engineer in Nairobi:
-[portfolio](https://kamama-digital-canvas.vercel.app) -
+[portfolio]( P2 ),
 [GitHub](https://github.com/collins-muchiri).
 
 The fourteen-category audit framework comes from real donor-funded programme
@@ -252,4 +252,4 @@ references.
 
 ## Licence
 
-[MIT](LICENSE) - Copyright (c) 2026 Muchiri Collins Kamama
+[MIT](LICENSE): Copyright (c) 2026 Muchiri Collins Kamama
